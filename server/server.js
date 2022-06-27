@@ -8,7 +8,7 @@ const request = require('superagent')
 const server = express()
 
 const apiKey = process.env.APP_API_KEY
-console.log(apiKey)
+// console.log(apiKey)
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import { getHome, getRecipes } from '../apiClient'
-import Home from './Home'
+import { getRecipes } from '../apiClient'
+import AddIngredient from './AddIngredient'
 
 function App() {
   const [recipes, setRecipes] = useState('')
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <h1>{recipes}</h1>
-      <Home />
+      <AddIngredient />
     </>
   )
 }
