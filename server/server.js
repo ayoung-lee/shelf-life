@@ -1,34 +1,31 @@
 const dotenv = require('dotenv')
 dotenv.config()
+
 const path = require('path')
 const express = require('express')
 const request = require('superagent')
 
-const welcome = require('./routes/welcome')
-
 const server = express()
 
-// const apiKey = process.env.API_KEY
-
+const apiKey = process.env.APP_API_KEY
+console.log(apiKey)
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-server.use('/api/v1/welcome', welcome)
+const recipes = require('./routes/recipes')
+server.use('/api/v1/recipes', recipes)
 
-const serverURL = 'https://api.spoonacular.com'
+const serverURL = 'https://api.spoonacular.com/recipes/random'
 
-server.get('/fridge', (req, res) => {
+server.get('/recipes', (req, res) => {
   request
-    .get(serverURL + '/recipes/findByIngredients')
-    .set(['?x-api-key=8c3eded167d64824a1a11b48000cf780'])
+    .get(serverURL + '?apiKey=' + apiKey + '&number=3')
     .then((response) => {
-      console.log(response.status)
-      console.log(response.body)
       res.json(response.body)
     })
     .catch((err) => {
       console.log(err)
-      res.status(500).send('err')
+      res.status(500).send('Server error')
     })
 })
 

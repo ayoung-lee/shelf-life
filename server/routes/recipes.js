@@ -2,10 +2,10 @@ const express = require('express')
 
 const router = express.Router()
 
-// GET /api/v1/welcome/
+// GET /api/v1/recipes/
 router.get('/', (req, res) => {
   try {
-    res.json({ statement: 'Welcome to external APIs!' })
+    res.json({ statement: "What's in my fridge?" })
   } catch (err) {
     res.status(500).send(err.message)
   }

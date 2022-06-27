@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react'
 
-import { getWelcome } from '../apiClient'
+import { getRecipes } from '../apiClient'
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
+  const [recipes, setRecipes] = useState('')
 
   useEffect(() => {
-    getWelcome()
+    getRecipes()
       .then((res) => {
-        setWelcomeStatement(res.statement)
+        setRecipes(res.statement)
       })
       .catch((err) => {
         console.error(err.message)
       })
-  })
+  }, [])
 
-  return <h1>{welcomeStatement}</h1>
+  return (
+    <>
+      <h1>{recipes}</h1>
+    </>
+  )
 }
 
 export default App
