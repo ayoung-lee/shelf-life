@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import { getRecipes } from '../apiClient'
+import { getHome, getRecipes } from '../apiClient'
+import Home from './Home'
 
 function App() {
   const [recipes, setRecipes] = useState('')
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <h1>{recipes}</h1>
+      <Home />
     </>
   )
 }
