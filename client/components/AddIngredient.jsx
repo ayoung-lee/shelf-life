@@ -9,15 +9,26 @@ export default function AddIngredient() {
     dispatch({ type: 'ADD_INGREDIENT', text: 'item from addIngredientjsx' })
   }, [])
 
+  function handleAdd(e) {
+    e.preventDefault()
+    console.log(item)
+  }
+
   return (
     <>
       <div>
-        <input
-          type="text"
-          placeholder="Add new ingredient in your fridge here! 🥑🍆"
-        />
-        <button>Add Ingredient</button>
-        <li>{item.text}</li>
+        <form onSubmit={handleAdd}>
+          <label htmlFor="newIngredient">Enter a new ingredient</label>
+          <input
+            id="newIngredient"
+            type="text"
+            name="ingredient"
+            value={item}
+            onChange={(e) => setItem(e.target.value)}
+          />
+          <input type="submit" value="Add" />
+          <li>{item.text}</li>
+        </form>
       </div>
     </>
   )

@@ -1,3 +1,5 @@
+import { ADD_INGREDIENT, DEL_INGREDIENT, UPDATE_INGREDIENT } from '../actions'
+
 const initialIngredientState = ['Milk', 'Eggs']
 
 const ingredientReducer = (state = initialIngredientState, action) => {
