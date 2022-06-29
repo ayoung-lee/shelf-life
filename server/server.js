@@ -19,6 +19,7 @@ server.use('/api/v1/recipes', recipes)
 const serverURL = 'https://api.spoonacular.com/recipes/findByIngredients'
 
 server.get('/recipes', (req, res) => {
+  // somehow get the ingredients from the client
   request
     .get(
       serverURL +

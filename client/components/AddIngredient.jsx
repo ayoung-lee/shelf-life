@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { addIngredient } from '../actions'
 
 export default function AddIngredient() {
-  const [item, setItem] = useState([])
-
+  const [ingredient, setingredient] = useState('')
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch({ type: 'ADD_INGREDIENT', text: 'item from addIngredientjsx' })
-  }, [])
 
   function handleAdd(e) {
     e.preventDefault()
-    console.log(item)
+    dispatch(addIngredient(ingredient))
+    setingredient('')
   }
 
   return (
@@ -23,11 +21,10 @@ export default function AddIngredient() {
             id="newIngredient"
             type="text"
             name="ingredient"
-            value={item}
-            onChange={(e) => setItem(e.target.value)}
+            value={ingredient}
+            onChange={(e) => setingredient(e.target.value)}
           />
           <input type="submit" value="Add" />
-          <li>{item.text}</li>
         </form>
       </div>
     </>
