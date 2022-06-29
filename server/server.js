@@ -8,18 +8,25 @@ const request = require('superagent')
 const server = express()
 
 const apiKey = process.env.APP_API_KEY
-console.log(apiKey)
+// console.log(apiKey)
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-const recipes = require('./routes/recipes')
+const recipes = require('./routes/home')
 server.use('/api/v1/recipes', recipes)
 
-const serverURL = 'https://api.spoonacular.com/recipes/random'
+// const serverURL = 'https://api.spoonacular.com/recipes/random'
+const serverURL = 'https://api.spoonacular.com/recipes/findByIngredients'
 
 server.get('/recipes', (req, res) => {
+  // somehow get the ingredients from the client
   request
-    .get(serverURL + '?apiKey=' + apiKey + '&number=3')
+    .get(
+      serverURL +
+        '?apiKey=' +
+        apiKey +
+        '&ingredients=flour,+cocoapowder&number=2'
+    )
     .then((response) => {
       res.json(response.body)
     })
