@@ -22,3 +22,5 @@ export const updateIngredient = (oldIngredient, newIngredient) => {
     payload: { oldIngredient, newIngredient },
   }
 }
+
+export const fetchIngredient = () => {}
