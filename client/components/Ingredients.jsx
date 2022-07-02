@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-// import { ADD_INGREDIENT, DEL_INGREDIENT, UPDATE_INGREDIENT } from '../actions'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import Ingredient from './Ingredient'
 
 export default function Ingredients() {
   const ingredients = useSelector((state) => state.ingredients)
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch({ type: 'ADD_INGREDIENT', payload: 'Orange' })
-  // }, [])
 
   return (
-    <ul>
-      {ingredients.map((ingredient, index) => (
-        <li key={index}>{ingredient}</li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        {ingredients.map((ingredient, index) => (
+          <li key={index}>
+            {ingredient}
+            <Ingredient item={ingredient} />
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

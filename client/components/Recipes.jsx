@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { getRecipes } from '../apiClient'
 
-export default function Recipes() {
+export default function RecipesFromHome() {
   // is this the right datatype
   const [recipes, setRecipes] = useState('')
 
@@ -17,9 +17,14 @@ export default function Recipes() {
       })
   }, [])
 
+  // function handleClick() {
+  //   console.log('button clicked')
+  // }
+
   return (
     <>
       <h1>{recipes}</h1>
+      <input type="submit" value="load recipes" />
     </>
   )
 }
