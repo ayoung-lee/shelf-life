@@ -11,9 +11,11 @@ export default function Ingredient(props) {
   }
 
   return (
-    <>
+    <div>
       {Ingredient}
-      <button onClick={() => handleDel()}>Del</button>
-    </>
+      <button className="delete--btn" onClick={() => handleDel()}>
+        Del
+      </button>
+    </div>
   )
 }

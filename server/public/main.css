@@ -1,0 +1,53 @@
+body {
+  /* background-image: url("./images/background.jpg") */
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  font-weight: 300;
+
+}
+
+.home-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+}
+
+.home-wrapper cite{
+  font-size: 14px
+}
+
+.ingredient-add {
+  margin: 10px;
+  width: 50%;
+  height: 30px;
+  border-radius: 30px;
+  border: solid;
+  border-color: rgb(252, 104, 50);
+  text-indent: 30px;
+}
+
+.ingredient-add-btn {
+  /* width: 55px;
+  height: 55ps; */
+  font-size: 15px;
+  background: rgb(252, 104, 50);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 7px;
+
+}
+
+.delete--btn {
+  font-size: 13px;
+  background: rgb(252, 104, 50);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 2px;
+
+}
+

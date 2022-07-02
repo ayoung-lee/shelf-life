@@ -16,15 +16,16 @@ export default function AddIngredient() {
     <>
       <div>
         <form onSubmit={handleAdd}>
-          <label htmlFor="newIngredient">Enter a new ingredient</label>
+          <label htmlFor="newIngredient">Enter new ingredients:</label>
           <input
+            className="ingredient-add"
             id="newIngredient"
             type="text"
             name="ingredient"
             value={ingredient}
             onChange={(e) => setIngredient(e.target.value)}
           />
-          <input type="submit" value="Add" />
+          <input className="ingredient-add-btn" type="submit" value="Add" />
         </form>
       </div>
     </>
